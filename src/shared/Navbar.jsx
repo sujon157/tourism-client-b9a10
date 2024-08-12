@@ -1,12 +1,30 @@
+import { useEffect, useState } from "react";
 import { GiCommercialAirplane } from "react-icons/gi";
-import { MdDarkMode } from "react-icons/md";
+// import { MdDarkMode } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
+    const [theme,setTheme]=useState('light');
+
+    useEffect(()=>{
+        localStorage.setItem('theme',theme);
+        const localTheme=localStorage.getItem('theme');
+        document.querySelector('html').setAttribute('data-theme',localTheme)
+
+    },[theme])
+    const handleToggle=(e)=>{
+        if(e.target.checked){
+            setTheme('synthwave');
+        }
+        else {
+            setTheme('light');
+        }
+    }
+
     const navLink = <>
         <li><NavLink to='/' className='text-white font-semibold       '>Home</NavLink></li>
-        <li><NavLink to='/addSpot'className='text-white font-semibold   '  >Add Tourists Spot</NavLink></li>
+        <li><NavLink to='/addSpot' className='text-white font-semibold   '  >Add Tourists Spot</NavLink></li>
         <li><NavLink to='/spots' className='text-white font-semibold  '>All Tourists Spot</NavLink></li>
         <li><NavLink to='/users' className='text-white font-semibold '>My Lists</NavLink></li>
     </>
@@ -43,7 +61,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4 ">
-                    <MdDarkMode className="text-3xl"></MdDarkMode>
+                    <input
+                        onChange={handleToggle}
+                        type="checkbox"
+                        className="toggle theme-controller col-span-2 col-start-1 row-start-1 border-sky-400 bg-amber-300 [--tglbg:theme(colors.sky.500)] checked:border-blue-800 checked:bg-blue-300 checked:[--tglbg:theme(colors.blue.900)]" />
                     <a className="btn text-[20px] font-bold">Login</a>
                     <a className="btn text-[20px] font-bold">Sign up</a>
                 </div>
