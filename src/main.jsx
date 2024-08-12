@@ -1,5 +1,5 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import './index.css'
 import {
   createBrowserRouter,
@@ -14,53 +14,65 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Navbar from './shared/Navbar.jsx';
 import Footer from './shared/Footer.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
+import AuthProvider from './providers/AuthProvider.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<MainLayout></MainLayout>,
-    // errorElement: <ErrorPage />,
+    element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element:<Home></Home> ,
+        element: <Home></Home>,
       },
       {
-        path:"/addSpot",
-        element:<AddTouristsSpot></AddTouristsSpot>,
+        path: "/addSpot",
+        element: <AddTouristsSpot></AddTouristsSpot>,
       },
       {
-        path:'/spots',
-        element:<TouristsSpot></TouristsSpot>
+        path: '/spots',
+        element: <TouristsSpot></TouristsSpot>
       },
       {
-        path:'/users',
-        element:<UsersList></UsersList>
+        path: '/users',
+        element: <UsersList></UsersList>
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-        path:'/register',
-        element:<Register></Register>
+        path: '/register',
+        element: <Register></Register>
       },
       {
-        path:'/navbar',
-        element:<Navbar></Navbar>
+        path: '/navbar',
+        element: <Navbar></Navbar>
       },
       {
-        path:'/footer',
-        element:<Footer></Footer>
+        path: '/footer',
+        element: <Footer></Footer>
       }
     ],
   },
 ]);
 
+// createRoot(document.getElementById('root')).render(
+//   <StrictMode>
+//     <AuthProvider>
+//       <RouterProvider router={router} />
+//     </AuthProvider>
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
+//   </StrictMode>,
+// )
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
+);
 
-  </StrictMode>,
-)

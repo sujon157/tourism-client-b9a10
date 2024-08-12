@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { GiCommercialAirplane } from "react-icons/gi";
-// import { MdDarkMode } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -23,10 +22,10 @@ const Navbar = () => {
     }
 
     const navLink = <>
-        <li><NavLink to='/' className='text-white font-semibold       '>Home</NavLink></li>
-        <li><NavLink to='/addSpot' className='text-white font-semibold   '  >Add Tourists Spot</NavLink></li>
-        <li><NavLink to='/spots' className='text-white font-semibold  '>All Tourists Spot</NavLink></li>
-        <li><NavLink to='/users' className='text-white font-semibold '>My Lists</NavLink></li>
+        <li><NavLink to='/' className='text-white font-semibold'>Home</NavLink></li>
+        <li><NavLink to='/addSpot' className='text-white font-semibold'  >Add Tourists Spot</NavLink></li>
+        <li><NavLink to='/spots' className='text-white font-semibold'>All Tourists Spot</NavLink></li>
+        <li><NavLink to='/users' className='text-white font-semibold'>My Lists</NavLink></li>
     </>
     return (
         <div className="">
@@ -53,7 +52,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-3xl font-bold"><GiCommercialAirplane></GiCommercialAirplane>World Tour</a>
+                    <a className="btn btn-ghost text-3xl font-bold"><GiCommercialAirplane className="text-yellow-400"></GiCommercialAirplane>World Tour</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -65,8 +64,8 @@ const Navbar = () => {
                         onChange={handleToggle}
                         type="checkbox"
                         className="toggle theme-controller col-span-2 col-start-1 row-start-1 border-sky-400 bg-amber-300 [--tglbg:theme(colors.sky.500)] checked:border-blue-800 checked:bg-blue-300 checked:[--tglbg:theme(colors.blue.900)]" />
-                    <a className="btn text-[20px] font-bold">Login</a>
-                    <a className="btn text-[20px] font-bold">Sign up</a>
+                    <a className="btn text-[20px] font-bold"><Link to='/login'>Login</Link></a>
+                    <a className="btn text-[20px] font-bold"><Link to='/register'>SignUp</Link></a>
                 </div>
             </div>
         </div>
