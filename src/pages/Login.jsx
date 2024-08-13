@@ -2,9 +2,12 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn,GoogleLogin,GithubLogin } = useContext(AuthContext);
+    
     const handleSignIn = e => {
         e.preventDefault();
         const form = e.target;
@@ -12,7 +15,6 @@ const Login = () => {
         const password = form.password.value;
         const userInfo = { email, password };
         console.log(userInfo);
-
 
         signIn(email, password)
             .then(result => {
@@ -43,6 +45,30 @@ const Login = () => {
 
             })
     }
+
+    const handleGoogleLogin=()=>{
+
+        GoogleLogin()
+        .then(result=>{
+        console.log(result.user);
+        })
+        .then(error=>{
+        console.error(error);
+        })    
+    }
+
+    const handleGithubLogin=()=>{
+        GithubLogin()
+        .then(result=>{
+            console.log(result.user);
+        })
+        .then(error=>{
+            console.error(error);
+            
+        })
+    }
+
+    
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
@@ -70,6 +96,10 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
+                            </div>
+                            <div className=" flex justify-center text-3xl space-x-3 mt-6">
+                                 <button type="button" onClick={handleGoogleLogin}> <FaGoogle></FaGoogle></button>
+                                 <button type="button" onClick={handleGithubLogin} ><FaGithub ></FaGithub></button>
                             </div>
                             <div className="flex my-2">
                                 <p className="text-xs">Already have an account?</p>
