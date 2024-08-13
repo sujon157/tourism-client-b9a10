@@ -4,16 +4,16 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
-    const [theme,setTheme]=useState('light');
+    const [theme, setTheme] = useState('light');
 
-    useEffect(()=>{
-        localStorage.setItem('theme',theme);
-        const localTheme=localStorage.getItem('theme');
-        document.querySelector('html').setAttribute('data-theme',localTheme)
+    useEffect(() => {
+        localStorage.setItem('theme', theme);
+        const localTheme = localStorage.getItem('theme');
+        document.querySelector('html').setAttribute('data-theme', localTheme)
 
-    },[theme])
-    const handleToggle=(e)=>{
-        if(e.target.checked){
+    }, [theme])
+    const handleToggle = (e) => {
+        if (e.target.checked) {
             setTheme('synthwave');
         }
         else {
@@ -52,7 +52,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-3xl font-bold"><GiCommercialAirplane className="text-yellow-400"></GiCommercialAirplane>World Tour</a>
+                    <a className="btn btn-ghost text-3xl text-white font-bold"><GiCommercialAirplane className="text-yellow-400"></GiCommercialAirplane><span className="text-pink-600 font-extrabold text-4xl">W</span>orld Tour</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -64,8 +64,20 @@ const Navbar = () => {
                         onChange={handleToggle}
                         type="checkbox"
                         className="toggle theme-controller col-span-2 col-start-1 row-start-1 border-sky-400 bg-amber-300 [--tglbg:theme(colors.sky.500)] checked:border-blue-800 checked:bg-blue-300 checked:[--tglbg:theme(colors.blue.900)]" />
-                    <a className="btn text-[20px] font-bold"><Link to='/login'>Login</Link></a>
-                    <a className="btn text-[20px] font-bold"><Link to='/register'>SignUp</Link></a>
+
+
+                    <a href="#_" className="relative inline-flex items-center justify-center inline-block p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 rounded-lg shadow-2xl group">
+                        <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-red-500 rounded-full blur-md ease"></span>
+                        <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                            <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-purple-500 rounded-full blur-md"></span>
+                            <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-pink-500 rounded-full blur-md"></span>
+                        </span>
+                        <span className="relative text-white"><Link to='/login'>Login</Link></span>
+                    </a>
+                    <a href="#_" className="rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-indigo-600 text-indigo-600 text-white">
+                        <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-indigo-600 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                        <span className="relative text-indigo-600 transition duration-300 group-hover:text-white ease"><Link to='/register'>SignUp</Link></span>
+                    </a>
                 </div>
             </div>
         </div>
