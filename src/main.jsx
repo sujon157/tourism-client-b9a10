@@ -16,6 +16,7 @@ import Navbar from './shared/Navbar.jsx';
 import Footer from './shared/Footer.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
+import ViewSpot from './pages/ViewSpot.jsx';
 
 
 const router = createBrowserRouter([
@@ -34,7 +35,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/spots',
-        element: <TouristsSpot></TouristsSpot>
+        element: <TouristsSpot></TouristsSpot>,
+        loader: () => fetch('http://localhost:3000/spot')
+      },
+      {
+        path: '/view/:_id',
+        element: <ViewSpot></ViewSpot>,
+        loader:()=> fetch(`http://localhost:3000/spot`)
       },
       {
         path: '/users',
@@ -59,15 +66,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     <AuthProvider>
-//       <RouterProvider router={router} />
-//     </AuthProvider>
-
-//   </StrictMode>,
-// )
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
