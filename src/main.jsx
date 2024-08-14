@@ -17,6 +17,7 @@ import Footer from './shared/Footer.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import ViewSpot from './pages/ViewSpot.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -40,12 +41,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/view/:_id',
-        element: <ViewSpot></ViewSpot>,
-        loader:()=> fetch(`http://localhost:3000/spot`)
+        element: <PrivateRoute><ViewSpot></ViewSpot></PrivateRoute>,
+        loader: () => fetch(`http://localhost:3000/spot`)
       },
       {
         path: '/users',
-        element: <UsersList></UsersList>
+        element: <PrivateRoute><UsersList></UsersList></PrivateRoute>,
+        loader: () => fetch('http://localhost:3000/spot')
       },
       {
         path: '/login',

@@ -1,12 +1,15 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
-    const { signIn,GoogleLogin,GithubLogin } = useContext(AuthContext);
+    const {setUser, signIn,GoogleLogin,GithubLogin } = useContext(AuthContext);
+
+    const location=useLocation();
+    const navigate=useNavigate();
     
     const handleSignIn = e => {
         e.preventDefault();
@@ -19,6 +22,9 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
+
+                setUser(result.user);
+                navigate(location?.state?location.state:'/');
                 if(result.user){
                     Swal.fire({
                         icon:'success',
@@ -51,6 +57,8 @@ const Login = () => {
         GoogleLogin()
         .then(result=>{
         console.log(result.user);
+        setUser(result.user);
+        navigate(location?.state?location.state:'/')
         })
         .then(error=>{
         console.error(error);
@@ -61,6 +69,9 @@ const Login = () => {
         GithubLogin()
         .then(result=>{
             console.log(result.user);
+            setUser(result.user);
+
+            navigate(location?.state?location.state:'/');
         })
         .then(error=>{
             console.error(error);
@@ -72,7 +83,7 @@ const Login = () => {
     return (
         <div>
             <div className="hero bg-cyan-800 min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse  w-full">
+                <div className="hero-content flex-col lg:flex-row-reverse mt-24 w-full  ">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
 
@@ -104,7 +115,7 @@ const Login = () => {
                             <div className="flex my-2">
                                 <p className="text-xs">Already have an account?</p>
 
-                                <Link className="text-blue-800 text-xs mr-8" to='/register'>Sign up</Link>
+                                <Link className="text-white text-xs mr-8" to='/register'>Sign up</Link>
                             </div>
                         </form>
                     </div>

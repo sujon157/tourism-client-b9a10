@@ -5,9 +5,9 @@ import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser,showPassword, setShowPassWord } = useContext(AuthContext);
+    const { createUser, user, setUser, showPassword, setShowPassWord } = useContext(AuthContext);
     const [passError, setPassError] = useState('');
-    
+    console.log(user);
 
 
 
@@ -29,7 +29,7 @@ const Register = () => {
             setPassError('Password must have 6 characters or longer');
             return;
         }
-        
+
         if (!/^(?=.*[A-Z]).+$/.test(password)) {
             setPassError('Password must have at least one upper-case letter ');
             return;
@@ -42,6 +42,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                setUser(result.user)
                 if (result.user) {
                     Swal.fire({
                         icon: 'success',
@@ -71,7 +72,7 @@ const Register = () => {
         <div>
             <div>
                 <div className="hero bg-indigo-500 min-h-screen">
-                    <div className=" hero-content flex-col lg:flex-row-reverse  w-full">
+                    <div className=" hero-content flex-col lg:flex-row-reverse mt-24  w-full">
                         <div className="text-center lg:text-left">
                             <h1 className="text-5xl font-bold">Sign Up now!</h1>
 
@@ -94,10 +95,10 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type={showPassword?'text':'password'} name='password' placeholder="password" className="input input-bordered" required />
-                                    <span className="absolute right-6 top-12" onClick={()=>setShowPassWord(!showPassword)}>
+                                    <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" required />
+                                    <span className="absolute right-6 top-12" onClick={() => setShowPassWord(!showPassword)}>
                                         {
-                                            showPassword?<FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                            showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                                         }
                                     </span>
 
@@ -117,7 +118,7 @@ const Register = () => {
                                 <div className="flex my-2">
                                     <p className="text-xs">Already have an account?</p>
 
-                                    <Link className="text-blue-800 text-xs mr-8" to='/login'>Login</Link>
+                                    <Link className="text-white text-xs mr-8" to='/login'>Login</Link>
                                 </div>
                             </form>
                         </div>

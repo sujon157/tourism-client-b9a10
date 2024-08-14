@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
+
 const ViewSpot = () => {
     const ViewSpot = useLoaderData();
     console.log(ViewSpot);
@@ -49,6 +50,7 @@ const spots =ViewSpot.find(spot => spot._id == _id);
                     </div>
                 </div>
             </div>
+          
         </div>
     );
 };
