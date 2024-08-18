@@ -6,7 +6,6 @@ import { AuthContext } from "../providers/AuthProvider";
 const Navbar = () => {
 
     const { user, logOut, loading } = useContext(AuthContext);
-    console.log(user);
     const [theme, setTheme] = useState('light');
 
     if (loading) {
@@ -41,16 +40,15 @@ const Navbar = () => {
         <li><NavLink to='/addSpot' className='text-white font-semibold'  >Add Tourists Spot</NavLink></li>
         <li><NavLink to='/spots' className='text-white font-semibold'>All Tourists Spot</NavLink></li>
         {
-            user   &&
+            user &&
             <>
-            <li><NavLink to='/view/:_id' className='text-white font-semibold'>View Spot</NavLink></li>
-            <li><NavLink to='/users' className='text-white font-semibold'>My Lists</NavLink></li>
+                <li><NavLink to='/view/:_id' className='text-white font-semibold'>View Spot</NavLink></li>
+                <li><NavLink to='/users' className='text-white font-semibold'>My Lists</NavLink></li>
+                <li><NavLink to='/updateSpot/:id' className='text-white font-semibold'>Update Spot</NavLink></li>
 
             </>
-           
-
-
         }
+
         {/* <li><NavLink to='/users' className='text-white font-semibold'>My Lists</NavLink></li> */}
     </>
     return (

@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const UsersList = () => {
     const userLoadedList = useLoaderData();
-    const [userList,setUserList]=useState(userLoadedList);
-
-    console.log(userList);
+    const [userList, setUserList] = useState(userLoadedList);
 
     const handleDelete = id => {
         console.log('delete', id);
@@ -19,28 +17,28 @@ const UsersList = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-                
-            
-            fetch(`http://localhost:3000/spot/${id}`,{
-                method:'DELETE'
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                console.log(data);
-                if(data.deletedCount>0){
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        icon: "success"
-                      });
-                      const remaining=userList.filter(list=>list._id !== id);
-                      setUserList(remaining);
-                }
-            })
+
+
+                fetch(`http://localhost:3000/spot/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            const remaining = userList.filter(list => list._id !== id);
+                            setUserList(remaining);
+                        }
+                    })
             }
-          });
+        });
 
     }
     return (
@@ -64,13 +62,15 @@ const UsersList = () => {
                             {/* row 1 */}
                             {
                                 userList.map(list => <tr key={list._id}>
-                                    <th>1</th>
+                                    <th>{list._id}</th>
                                     <td>{list.tourists_spot_name}</td>
                                     <td>{list.country_Name}</td>
                                     <td>{list.location}</td>
                                     <td>
                                         <div className="flex gap-4">
-                                            <button>Edit</button>
+                                            <Link to={`/updateSpot/${list._id}`}>
+                                                <button>Edit</button>
+                                            </Link>
                                             <button onClick={() => handleDelete(list._id)}>X</button>
                                         </div>
                                     </td>

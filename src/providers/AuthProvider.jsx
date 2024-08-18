@@ -10,9 +10,6 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [showPassword, setShowPassWord] = useState(false);
 
-
-    console.log(user);
-
     const GoogleProvider = new GoogleAuthProvider();
     const GithubProvider = new GithubAuthProvider();
 

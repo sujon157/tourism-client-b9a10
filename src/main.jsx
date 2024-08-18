@@ -18,6 +18,7 @@ import ErrorPage from './pages/ErrorPage.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import ViewSpot from './pages/ViewSpot.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
+import UpdateSpot from './pages/UpdateSpot.jsx';
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: "/addSpot",
         element: <AddTouristsSpot></AddTouristsSpot>,
+      },
+      
+      {
+        path:'/updateSpot/:id',
+        element:<PrivateRoute><UpdateSpot></UpdateSpot></PrivateRoute>
       },
       {
         path: '/spots',
