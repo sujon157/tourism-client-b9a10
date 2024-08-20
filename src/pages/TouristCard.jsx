@@ -8,11 +8,11 @@ const TouristCard = ({ spot }) => {
     return (
         <div className="">
             <div className="card bg-red-300 w-96 shadow-xl">
-                <figure className="px-10 pt-6">
+                <figure className="px-10 pt-6 ">
                     <img
                         src={image}
                         alt="Spot"
-                        className="rounded-xl" />
+                        className="rounded-xl " />
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="font-semibold  text-2xl">{tourists_spot_name}</h2>

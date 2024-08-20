@@ -1,15 +1,26 @@
-import { useLoaderData, useParams } from "react-router-dom";
+
+import { useEffect, useState } from "react";
+import {  useParams } from "react-router-dom";
 
 
 const ViewSpot = () => {
-    const ViewSpot = useLoaderData();
-    console.log(ViewSpot);
+    
+    const{id}=useParams();
+    const [view,setView]=useState({});
+    console.log(view);
 
-    const{_id}=useParams();
-    console.log(_id);
+    useEffect(()=>{
+        fetch(`http://localhost:3000/singleSpot/${id}`)
+        .then(res =>res.json())
+        .then(data => {
+            console.log(data);
+            setView(data);
+        })
+    },[id]);
 
-const spots =ViewSpot.find(spot => spot._id == _id);
-    const {country_Name,tourists_spot_name,location,total_Visitors_PerYear,seasonality,travel_time,average_cost,image,short_description} =spots
+
+
+    const {country_Name,tourists_spot_name,location,total_Visitors_PerYear,seasonality,travel_time,average_cost,image,short_description} =view;
 
     return (
         <div>

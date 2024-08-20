@@ -6,11 +6,42 @@ import { AuthContext } from "../providers/AuthProvider";
 const Navbar = () => {
 
     const { user, logOut, loading } = useContext(AuthContext);
+
     const [theme, setTheme] = useState('light');
 
-    if (loading) {
-        return <span className="loading loading-spinner loading-lg "></span>
+    useEffect(() => {
+
+        const localTheme=localStorage.getItem('theme') || 'light';
+        localStorage.setItem('theme',localTheme);
+
+       
+        document.querySelector('html').setAttribute('data-theme', localTheme);
+        setTheme(localTheme);
+
+    }, [])
+
+
+    const handleToggle = (e) => {
+        if (e.target.checked) {
+            setTheme('synthwave');
+            localStorage.setItem('theme','synthwave');
+       
+            document.querySelector('html').setAttribute('data-theme','synthwave' );
+            setTheme('synthwave');
+        }
+        else {
+            setTheme('light');
+            localStorage.setItem('theme','light');
+       
+            document.querySelector('html').setAttribute('data-theme', 'light');
+            setTheme('light');
+        }
     }
+
+   
+   
+
+
 
     const handleSignOut = () => {
         logOut()
@@ -18,22 +49,10 @@ const Navbar = () => {
             .catch()
     }
 
-    //  useEffect(() => {
-    //     localStorage.setItem('theme', theme);
-    //     const localTheme = localStorage.getItem('theme');
-    //     document.querySelector('html').setAttribute('data-theme', localTheme)
-
-    // }, [theme])
-
-
-    const handleToggle = (e) => {
-        if (e.target.checked) {
-            setTheme('synthwave');
-        }
-        else {
-            setTheme('light');
-        }
+    if (loading) {
+        return <span className="loading loading-spinner loading-lg "></span>
     }
+
 
     const navLink = <>
         <li><NavLink to='/' className='text-white font-semibold'>Home</NavLink></li>
@@ -42,14 +61,12 @@ const Navbar = () => {
         {
             user &&
             <>
-                <li><NavLink to='/view/:_id' className='text-white font-semibold'>View Spot</NavLink></li>
+                {/* <li><NavLink to='/view/:id' className='text-white font-semibold'>View Spot</NavLink></li> */}
                 <li><NavLink to='/users' className='text-white font-semibold'>My Lists</NavLink></li>
-                <li><NavLink to='/updateSpot/:id' className='text-white font-semibold'>Update Spot</NavLink></li>
-
+                {/* <li><NavLink to='/updateSpot/:id' className='text-white font-semibold'>Update Spot</NavLink></li> */}
             </>
         }
 
-        {/* <li><NavLink to='/users' className='text-white font-semibold'>My Lists</NavLink></li> */}
     </>
     return (
         <div className="">
@@ -84,6 +101,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2 p-6 ">
+                    
                     <input
                         onChange={handleToggle}
                         type="checkbox"

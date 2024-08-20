@@ -31,6 +31,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+     
       {
         path: "/addSpot",
         element: <AddTouristsSpot></AddTouristsSpot>,
@@ -46,9 +47,9 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:3000/spot')
       },
       {
-        path: '/view/:_id',
-        element: <PrivateRoute><ViewSpot></ViewSpot></PrivateRoute>,
-        loader: () => fetch(`http://localhost:3000/spot`)
+        path: '/view/:id',
+        element: <PrivateRoute><ViewSpot></ViewSpot></PrivateRoute>
+        
       },
       {
         path: '/users',

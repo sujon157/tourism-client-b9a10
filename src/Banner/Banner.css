@@ -1,0 +1,48 @@
+/* Banner.css */
+
+.swiper-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    
+    .swiper-slide-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #4a90e2;
+      color: #fff;
+      font-size: 24px;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .swiper-slide-content:hover {
+      background-color: #357ab8;
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Pagination styles */
+    .swiper-pagination-bullet {
+      background: #fff;
+      opacity: 0.7;
+    }
+    
+    .swiper-pagination-bullet-active {
+      background: #357ab8;
+      opacity: 1;
+    }
+    
+    /* Navigation buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #fff;
+    }
+    
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      color: #357ab8;
+    }
+    

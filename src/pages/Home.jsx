@@ -1,19 +1,23 @@
-// import Footer from "../shared/Footer";
-// import Navbar from "../shared/Navbar";
+// import Carousel from 'react-bootstrap/Carousel';
 
-
-
+import Banner from "../Banner/Banner";
 
 
 
 const Home = () => {
-   
+
     return (
+
+
         <div>
-    
-      
+            <Banner></Banner>
+        
+           
+
         </div>
+
     );
 };
+
 
 export default Home;

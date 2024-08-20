@@ -1,24 +1,24 @@
-import { useParams} from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 
 const UpdateSpot = () => {
 
-const [spot,setSpot]=useState({});
-const {id}=useParams();
-console.log(id);
+    const { id } = useParams();
+    const [spot, setSpot] = useState({});
+    console.log(id);
 
-useEffect(()=>{
-    fetch(`http://localhost:3000/singleTourist/${id}`)
-   .then(res=>res.json())
-   .then(data=>{
-    setSpot(data);
-    console.log(data);
-   })
-},[id]);
-   
+    useEffect(() => {
+        fetch(`http://localhost:3000/singleTourist/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setSpot(data);
+                console.log(data);
+            })
+    }, [id]);
 
-   
+
+
     const { country_Name, tourists_spot_name, location, total_Visitors_PerYear, seasonality, travel_time, average_cost, image, short_description } = spot;
 
     const handleUpdateSpots = event => {
@@ -33,7 +33,7 @@ useEffect(()=>{
         const average_cost = form.average_cost.value;
         const image = form.image.value;
         const short_description = form.short_description.value;
-        const UpdateSpotsInfo = {  country_Name, tourists_spot_name, location, total_Visitors_PerYear, seasonality, travel_time, average_cost, image, short_description };
+        const UpdateSpotsInfo = { country_Name, tourists_spot_name, location, total_Visitors_PerYear, seasonality, travel_time, average_cost, image, short_description };
 
         console.log(UpdateSpotsInfo);
 
@@ -45,10 +45,10 @@ useEffect(()=>{
             body: JSON.stringify(UpdateSpotsInfo)
 
         })
-        .then(res => res.json())
-        .then(data => {
+            .then(res => res.json())
+            .then(data => {
                 console.log(data);
-                if(data.modifiedCount>0){
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: "Success!",
                         text: "Tourist Spot Updated successfully.",
@@ -79,7 +79,7 @@ useEffect(()=>{
                             <span className="label-text"> Tourists_spot_name</span>
                         </label>
                         <label className="input-group">
-                  <input type="text" name="tourists_spot_name" defaultValue={tourists_spot_name} placeholder=" Tourists_spot_name" className="input input-bordered w-full " />
+                            <input type="text" name="tourists_spot_name" defaultValue={tourists_spot_name} placeholder=" Tourists_spot_name" className="input input-bordered w-full " />
                         </label>
                     </div>
                     <div className="form-control w-full">
@@ -96,7 +96,7 @@ useEffect(()=>{
                             <span className="label-text">Total Visitors Per Year </span>
                         </label>
                         <label className="input-group">
-                          <input type="text" name="totalVisitorsPerYear" defaultValue={total_Visitors_PerYear} placeholder="Total Visitors Per Year" className="input input-bordered w-full " />
+                            <input type="text" name="totalVisitorsPerYear" defaultValue={total_Visitors_PerYear} placeholder="Total Visitors Per Year" className="input input-bordered w-full " />
                         </label>
                     </div>
                     <div className="form-control  w-full">
