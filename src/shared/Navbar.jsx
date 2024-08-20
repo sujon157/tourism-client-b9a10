@@ -11,10 +11,10 @@ const Navbar = () => {
 
     useEffect(() => {
 
-        const localTheme=localStorage.getItem('theme') || 'light';
-        localStorage.setItem('theme',localTheme);
+        const localTheme = localStorage.getItem('theme') || 'light';
+        localStorage.setItem('theme', localTheme);
 
-       
+
         document.querySelector('html').setAttribute('data-theme', localTheme);
         setTheme(localTheme);
 
@@ -24,23 +24,19 @@ const Navbar = () => {
     const handleToggle = (e) => {
         if (e.target.checked) {
             setTheme('synthwave');
-            localStorage.setItem('theme','synthwave');
-       
-            document.querySelector('html').setAttribute('data-theme','synthwave' );
+            localStorage.setItem('theme', 'synthwave');
+
+            document.querySelector('html').setAttribute('data-theme', 'synthwave');
             setTheme('synthwave');
         }
         else {
             setTheme('light');
-            localStorage.setItem('theme','light');
-       
+            localStorage.setItem('theme', 'light');
+
             document.querySelector('html').setAttribute('data-theme', 'light');
             setTheme('light');
         }
     }
-
-   
-   
-
 
 
     const handleSignOut = () => {
@@ -56,14 +52,16 @@ const Navbar = () => {
 
     const navLink = <>
         <li><NavLink to='/' className='text-white font-semibold'>Home</NavLink></li>
-        <li><NavLink to='/addSpot' className='text-white font-semibold'  >Add Tourists Spot</NavLink></li>
+        {
+            user &&
+            <li><NavLink to='/addSpot' className='text-white font-semibold'  >Add Tourists Spot</NavLink></li>
+
+        }
         <li><NavLink to='/spots' className='text-white font-semibold'>All Tourists Spot</NavLink></li>
         {
             user &&
             <>
-                {/* <li><NavLink to='/view/:id' className='text-white font-semibold'>View Spot</NavLink></li> */}
                 <li><NavLink to='/users' className='text-white font-semibold'>My Lists</NavLink></li>
-                {/* <li><NavLink to='/updateSpot/:id' className='text-white font-semibold'>Update Spot</NavLink></li> */}
             </>
         }
 
@@ -101,7 +99,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2 p-6 ">
-                    
+
                     <input
                         onChange={handleToggle}
                         type="checkbox"

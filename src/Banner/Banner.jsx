@@ -1,13 +1,78 @@
 
+import { useRef } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 
+import './Banner.css'
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
 const Banner = () => {
+      const progressCircle = useRef(null);
+      const progressContent = useRef(null);
+      const onAutoplayTimeLeft = (s, time, progress) => {
+            progressCircle.current.style.setProperty('--progress', 1 - progress);
+            progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+      };
 
       return (
             <div>
-                  <div className="carousel  w-full">
+                  <Swiper
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                              delay: 2500,
+                              disableOnInteraction: false,
+                        }}
+                        pagination={{
+                              clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        onAutoplayTimeLeft={onAutoplayTimeLeft}
+                        className="mySwiper"
+                  >
+                        <SwiperSlide >
+                              <img src="https://i.ibb.co/6XTn8qp/beautiful-girl-making-drip-coffee-sunrise-viewpoint-pha-hi-village-chiang-rai-province-thailand.jpg" alt="Slide 1"
+                                    className="  " />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                              <img src="https://i.ibb.co/gz6K80p/temple-391074-1280.jpg" alt="Slide 2"
+                                    className="  " />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                              <img src="https://i.ibb.co/bQRVgbB/city-6599328-1280.jpg" alt="Slide 3"
+                                    className="  " />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                              <img
+                                    src="https://i.ibb.co/56kBKv1/river-calm-scenery.jpg" alt="Slide 4"
+                                    className=" " />
+                        </SwiperSlide>
+
+                        <div className="autoplay-progress" slot="container-end">
+                              <svg viewBox="0 0 48 48" ref={progressCircle}>
+                                    <circle cx="24" cy="24" r="20"></circle>
+                              </svg>
+                              <span ref={progressContent}></span>
+                        </div>
+                  </Swiper>
+
+
+
+
+
+
+
+                  {/* <div className="carousel  w-full">
                         <div id="slide1" className="carousel-item relative w-full h-[550px]">
                               <img
                                     src="https://i.ibb.co/6XTn8qp/beautiful-girl-making-drip-coffee-sunrise-viewpoint-pha-hi-village-chiang-rai-province-thailand.jpg" alt="Slide 1"
@@ -44,7 +109,7 @@ const Banner = () => {
                                     <a href="#slide1" className="btn btn-circle">❯</a>
                               </div>
                         </div>
-                  </div>
+                  </div> */}
             </div>
       );
 };
