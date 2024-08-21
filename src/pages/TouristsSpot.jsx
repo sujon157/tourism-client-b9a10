@@ -47,14 +47,18 @@ const TouristsSpot = () => {
                 </details>
             </div>
 
-            <div className=" grid-cols-1 md:grid lg:grid-cols-3 justify-between p-20 gap-4 space-y-2 mt-8">
+        
+            <div className="  grid-cols-1 md:grid lg:grid-cols-3 justify-between p-20 gap-4 space-y-2 mt-8">
+            
+           
                 {
-                    spots.map(spot => <TouristCard
+                    spots.map(spot =><TouristCard
                         key={spot._id}
                         spot={spot}
                         setSpots={setSpots}
 
-                    ></TouristCard>)
+                    ></TouristCard>
+                    )  
                 }
             </div>
         </div>

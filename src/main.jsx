@@ -19,6 +19,7 @@ import AuthProvider from './providers/AuthProvider.jsx';
 import ViewSpot from './pages/ViewSpot.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
+import TouristSection from './TouristSection/TouristSection.jsx';
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,8 @@ const router = createBrowserRouter([
         element: <TouristsSpot></TouristsSpot>,
         loader: () => fetch('http://localhost:3000/spot')
       },
+     
+    
       {
         path: '/view/:id',
         element: <PrivateRoute><ViewSpot></ViewSpot></PrivateRoute>

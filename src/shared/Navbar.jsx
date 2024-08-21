@@ -8,7 +8,6 @@ const Navbar = () => {
     const { user, logOut, loading } = useContext(AuthContext);
 
     const [theme, setTheme] = useState('light');
-
     useEffect(() => {
 
         const localTheme = localStorage.getItem('theme') || 'light';
@@ -18,9 +17,7 @@ const Navbar = () => {
         document.querySelector('html').setAttribute('data-theme', localTheme);
         setTheme(localTheme);
 
-    }, [])
-
-
+    }, []);
     const handleToggle = (e) => {
         if (e.target.checked) {
             setTheme('synthwave');
@@ -29,8 +26,9 @@ const Navbar = () => {
             document.querySelector('html').setAttribute('data-theme', 'synthwave');
             setTheme('synthwave');
         }
-        else {
-            setTheme('light');
+        else { 
+
+    setTheme('light');
             localStorage.setItem('theme', 'light');
 
             document.querySelector('html').setAttribute('data-theme', 'light');

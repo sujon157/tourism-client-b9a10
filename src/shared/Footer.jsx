@@ -32,7 +32,7 @@ const Footer = () => {
                         <a href="#">Contact</a>
                     </p>
 
-                    <p className="footer-company-name">World Tour © 2015</p>
+                    <p className="footer-company-name ">World Tour © 2015</p>
                 </div>
 
                 <div className="footer-center space-y-6">
@@ -73,9 +73,10 @@ const Footer = () => {
                     </div>
 
                 </div>
+              
 
             </footer>
-            <footer className="footer footer-center bg-base-300 text-base-content p-4">
+            <footer className=" bg-[#666] footer footer-center  text-white p-4">
                 <aside>
                     <p>Copyright © {new Date().getFullYear()} - All right reserved by World Tour Industries Ltd</p>
                 </aside>
