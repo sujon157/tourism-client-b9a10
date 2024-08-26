@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import './TouristSection.css';
 import { Link } from "react-router-dom";
-import { AwesomeButton, AwesomeButtonProgress } from "react-awesome-button";
+import { IoIosAirplane } from "react-icons/io";
 
 
 const TouristSection = () => {
@@ -25,14 +25,34 @@ const TouristSection = () => {
 
       return (
             <div>
-                  <div className="  grid md:grid-cols-2  lg:grid-cols-3 justify-between p-32 gap-4 space-y-2 mt-4">
+                  <div className=" flex justify-between gap-6 px-8 mt-16 text-blue-900">
+                        <div className=" pl-20 w-1/2">
+                              <div className="flex gap-4  text-xl">
+                                    <p>What we Provide To Travel  -------
+                                    </p>
+                                    <p className="text-xl"><IoIosAirplane /></p>
+                              </div>
+                              <h2 className="text-3xl font-extrabold">Stunning Home Pages</h2>
+                        </div>
+                        <div className="w-1/2">
+                              <p>Stunning Home Pages
+                                    Our homepage provides easy navigation for perusing a variety of <br /> programs, ranging from thrilling mountain hikes and tranquil beach <br />vacations to deeply engaging cultural city experiences and more. Your <br />dream adventure is just a click away with this theme.</p>
+                        </div>
+                  </div>
+
+                  <div className="mt-16 ">
+                        <h1 className="text-4xl font-bold text-center">Discover our Tourist Spots</h1>
+                        <p className="text-xl text-center mt-2">Our top 6 popular tourist spots in the world</p>
+                  </div>
+
+                  <div className=" grid md:grid-cols-2  lg:grid-cols-3 justify-between px-32  space-x-4 space-y-4 mt-10">
                         {
                               tourist.map(p => <div
-
+                                    className=" shadow-black shadow-xl pl-5  pb-12 border-l-4 rounded-xl"
                                     key={p._id}>
 
-                                    <div className="flip-card">
-                                          <div className="flip-card-inner ">
+                                    <div className="flip-card ">
+                                          <div className="flip-card-inner   ">
                                                 <div className="flip-card-front">
                                                       <img src={p.image} alt="" />
                                                 </div>

@@ -74,7 +74,7 @@ const Register = () => {
                 <div className="hero bg-indigo-500 min-h-screen">
                     <div className=" hero-content flex-col lg:flex-row-reverse mt-24  w-full">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold">Sign Up now!</h1>
+                            <h1 className="text-5xl text-white font-bold">Sign Up now!</h1>
 
                         </div>
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

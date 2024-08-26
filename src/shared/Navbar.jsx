@@ -1,13 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { GiCommercialAirplane } from "react-icons/gi";
+import { useContext, useEffect, useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import './Navbar.css';
 
 const Navbar = () => {
-
     const { user, logOut, loading } = useContext(AuthContext);
-
     const [theme, setTheme] = useState('light');
+
+
+
     useEffect(() => {
 
         const localTheme = localStorage.getItem('theme') || 'light';
@@ -18,17 +19,18 @@ const Navbar = () => {
         setTheme(localTheme);
 
     }, []);
+
     const handleToggle = (e) => {
         if (e.target.checked) {
-            setTheme('synthwave');
-            localStorage.setItem('theme', 'synthwave');
+            setTheme('dark');
+            localStorage.setItem('theme', 'dark');
 
-            document.querySelector('html').setAttribute('data-theme', 'synthwave');
-            setTheme('synthwave');
+            document.querySelector('html').setAttribute('data-theme', 'dark');
+            setTheme('dark');
         }
-        else { 
+        else {
 
-    setTheme('light');
+            setTheme('light');
             localStorage.setItem('theme', 'light');
 
             document.querySelector('html').setAttribute('data-theme', 'light');
@@ -49,24 +51,24 @@ const Navbar = () => {
 
 
     const navLink = <>
-        <li><NavLink to='/' className='text-white font-semibold'>Home</NavLink></li>
+        <li><NavLink to='/' className='text-white font-semibold'>HOME</NavLink></li>
         {
             user &&
-            <li><NavLink to='/addSpot' className='text-white font-semibold'  >Add Tourists Spot</NavLink></li>
-
+            <li><NavLink to='/addSpot' className='text-white font-semibold'  >ADD TOURIST</NavLink></li>
         }
-        <li><NavLink to='/spots' className='text-white font-semibold'>All Tourists Spot</NavLink></li>
+        <li><NavLink to='/country' className='text-white font-semibold'  >ADD COUNTRY</NavLink></li>
+        <li><NavLink to='/spots' className='text-white font-semibold'>ALL TOURISTS</NavLink></li>
         {
             user &&
             <>
-                <li><NavLink to='/users' className='text-white font-semibold'>My Lists</NavLink></li>
+                <li><NavLink to='/users' className='text-white font-semibold'>USER LIST</NavLink></li>
             </>
         }
 
     </>
     return (
         <div className="">
-            <div className="navbar bg-[#5ac8fa]  ">
+            <div className="navbar   navbar-dark bg-primary shadow-3xl fixed z-10">
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -85,11 +87,14 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content  mt-3 w-52 p-2">
                             {navLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-3xl text-white font-bold"><GiCommercialAirplane className="text-yellow-400"></GiCommercialAirplane><span className="text-pink-600 font-extrabold text-4xl">W</span>orld Tour</a>
+                    <img src="https://i.ibb.co/w0d1F8J/airplane.png" className="w-14 h-14" alt="" />
+                    <a className="btn btn-ghost text-white font-bold text-xl">
+
+                        <span className='text-3xl font-bold text-orange-600'>T</span>RAVEL TOUR</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -139,6 +144,7 @@ const Navbar = () => {
                                             <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
                                             <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Sign Up</span>
                                         </a>
+
                                     </p>
 
                                 </Link>

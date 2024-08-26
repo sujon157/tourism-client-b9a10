@@ -44,8 +44,13 @@ const UsersList = () => {
     return (
 
         <div>
-            <div className="mb-20 p-20">
-                <h2 className="font-serif text-4xl items-center ml-96 mb-6"> Please see User Lists</h2>
+            <div className="mb-6 p-20 bg-amber-100 ">
+                <h2 className="font-serif text-4xl  text-center mt-14"> Please see User Lists</h2>
+                
+                    <p className="text-center">
+                        You can edit and delete your users list here and click on them below to select 
+                    </p>
+                
                 <div className="overflow-x-auto mt-10">
                     <table className="table ">
                         {/* head */}
@@ -61,7 +66,7 @@ const UsersList = () => {
                         <tbody>
                             {/* row 1 */}
                             {
-                                userList.map(list => <tr key={list._id}>
+                                userList.map(list => <tr key={list._id} className="text-red-500">
                                     <th>{list._id}</th>
                                     <td>{list.tourists_spot_name}</td>
                                     <td>{list.country_Name}</td>

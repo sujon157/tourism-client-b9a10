@@ -1,21 +1,47 @@
-import { Link, useRouteError } from "react-router-dom";
 
+import { Link } from 'react-router-dom';
+import './Error.css';
 
 const ErrorPage = () => {
-    const error = useRouteError();
-    
+
+
     return (
-        <div className="text-center mt-32 space-y-4">
-            <h2>Oopps!!!</h2>
-            <p>{ error.message}</p>
-            {
-                error.status === 404 && <div>
-                    <h3 className="text-2xl"> 404 Page not found</h3>
-                    <p className="mt-2">Go back where you from </p>
-                    <Link to='/'>    <button className="bg-[#23BE0A] font-bold px-5 p-2 mt-3 rounded-xl text-white">Home</button></Link>
+
+        <div>
+
+
+            <section className="page_404">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-12 ">
+                            <div className="col-sm-10 col-sm-offset-1  text-center">
+                                <div className="four_zero_four_bg">
+                                    <h1 className="text-center ">404</h1>
+
+
+                                </div>
+
+                                <div className="contant_box_404">
+                                    <h3 className="h2">
+                                        Look like you are lost
+                                    </h3>
+
+                                    <p>the page you are looking for not avaible!</p>
+
+                                    <Link to="/">
+                                        <a href="" className="link_404">Go to Home</a>
+
+                                    </Link>                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            }
+            </section>
         </div>
+
+
+
+
     );
 };
 

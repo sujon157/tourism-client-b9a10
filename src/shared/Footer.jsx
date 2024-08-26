@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <div>
 
-            <footer className="footer-distributed">
+            <footer className="footer-distributed ">
 
                 <div className="footer-left">
 
@@ -32,7 +32,7 @@ const Footer = () => {
                         <a href="#">Contact</a>
                     </p>
 
-                    <p className="footer-company-name ">World Tour © 2015</p>
+                    <p className="footer-company-name ">Travel Tour © 2015</p>
                 </div>
 
                 <div className="footer-center space-y-6">
@@ -50,7 +50,7 @@ const Footer = () => {
 
                     <div className='flex space-x-16'>
                         <p className='text-3xl font-bold'><MdOutlineMailOutline /></p>
-                        <p><a href="mailto:support@company.com">support@worldtour.com</a></p>
+                        <p><a href="mailto:support@company.com">support@traveltour.com</a></p>
                     </div>
 
                 </div>

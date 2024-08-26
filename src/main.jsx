@@ -19,7 +19,8 @@ import AuthProvider from './providers/AuthProvider.jsx';
 import ViewSpot from './pages/ViewSpot.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
-import TouristSection from './TouristSection/TouristSection.jsx';
+
+import Country from './pages/Country.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: "/addSpot",
         element:<PrivateRoute> <AddTouristsSpot></AddTouristsSpot></PrivateRoute>
       },
+      {
+        path: '/country',
+        element: <Country></Country>
+      },
       
       {
         path:'/updateSpot/:id',
@@ -45,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: '/spots',
         element: <TouristsSpot></TouristsSpot>,
-        loader: () => fetch('http://localhost:3000/spot')
+       loader: () => fetch('http://localhost:3000/spot')
       },
      
     
