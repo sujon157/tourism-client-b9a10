@@ -56,7 +56,7 @@ const Navbar = () => {
             user &&
             <li><NavLink to='/addSpot' className='text-white font-semibold'  >ADD TOURIST</NavLink></li>
         }
-        <li><NavLink to='/country' className='text-white font-semibold'  >ADD COUNTRY</NavLink></li>
+        <li><NavLink to='/countryField' className='text-white font-semibold'  >ADD COUNTRY</NavLink></li>
         <li><NavLink to='/spots' className='text-white font-semibold'>ALL TOURISTS</NavLink></li>
         {
             user &&

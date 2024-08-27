@@ -7,7 +7,6 @@ import './TouristsSpot.css'
 const TouristsSpot = () => {
 
     const loadedSpots = useLoaderData();
-    console.log(loadedSpots);
     const [spots, setSpots] = useState(loadedSpots);
 
 

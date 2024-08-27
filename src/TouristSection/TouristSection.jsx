@@ -19,10 +19,6 @@ const TouristSection = () => {
 
       }, []);
 
-
-
-
-
       return (
             <div>
                   <div className=" flex justify-between gap-6 px-8 mt-16 text-blue-900">

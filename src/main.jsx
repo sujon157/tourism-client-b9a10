@@ -19,7 +19,9 @@ import AuthProvider from './providers/AuthProvider.jsx';
 import ViewSpot from './pages/ViewSpot.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
-
+import SelfCountrySpot from './pages/SelfCountrySpot.jsx';
+import Contact from './pages/Contact.jsx';
+import CountryField from './pages/CountryField.jsx';
 import Country from './pages/Country.jsx';
 
 
@@ -39,8 +41,16 @@ const router = createBrowserRouter([
         element:<PrivateRoute> <AddTouristsSpot></AddTouristsSpot></PrivateRoute>
       },
       {
-        path: '/country',
-        element: <Country></Country>
+        path: '/countryField',
+        element: <CountryField></CountryField>
+      },
+      {
+        path:'/country',
+        element:<Country></Country>
+      },
+      {
+        path:'/selfCountry/:country_name',
+        element:<SelfCountrySpot></SelfCountrySpot>
       },
       
       {
@@ -79,6 +89,10 @@ const router = createBrowserRouter([
       {
         path: '/footer',
         element: <Footer></Footer>
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>
       }
     ],
   },

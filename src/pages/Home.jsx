@@ -1,7 +1,7 @@
 
 import Banner from "../Banner/Banner";
 import TouristSection from "../TouristSection/TouristSection";
-import CountryCard from "./CountryCard";
+import Country from "./Country";
 
 
 
@@ -15,7 +15,7 @@ const Home = () => {
         <div className="bg-amber-100">
             <Banner></Banner>
             <TouristSection></TouristSection>
-            <CountryCard></CountryCard>
+            <Country></Country>
 
 
         </div>

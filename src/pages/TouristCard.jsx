@@ -7,10 +7,6 @@ const TouristCard = ({ spot }) => {
     const { _id, tourists_spot_name, total_Visitors_PerYear, seasonality, travel_time, average_cost, image } = spot;
 
 
-
-
-
-
     return (
         <div className="">
 
