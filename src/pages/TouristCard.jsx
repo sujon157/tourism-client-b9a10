@@ -21,7 +21,7 @@ const TouristCard = ({ spot }) => {
                         <p>Visit :{total_Visitors_PerYear}</p>
                     </div>
                     <div className="flex justify-between gap-5">
-                        <p>Time : {travel_time}</p>
+                        <p>Time : {travel_time} days</p>
                         <p>Cost : ${average_cost}</p>
                     </div>
                     <span>

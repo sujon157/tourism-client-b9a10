@@ -83,8 +83,12 @@ const Login = () => {
 
     return (
         <div className="border">
+           <p className="text-center mt-32 text-blue-950">
+          <span className="text-4xl font-serif">  Welcome to our tourism website!</span> <br /> Please login to access your personalized experience. <br />
+            If you don't have an account, click the 'Sign up' button to create one.
+           </p>
 
-            <div className="login-box">
+            <div className="login-box ">
                 <h2 className="text-3xl">Login Now!</h2>
                 <form onSubmit={handleSignIn}>
                     <div className="user-box">

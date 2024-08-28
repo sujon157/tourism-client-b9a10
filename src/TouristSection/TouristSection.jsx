@@ -38,7 +38,7 @@ const TouristSection = () => {
 
                   <div className="mt-16 ">
                         <h1 className="text-4xl font-bold text-center">Discover our Tourist Spots</h1>
-                        <p className="text-xl text-center mt-2">Our top 6 popular tourist spots in the world</p>
+                        <p className="text-xl text-center mt-2">Our top  popular tourist spots in the world</p>
                   </div>
 
                   <div className=" grid md:grid-cols-2  lg:grid-cols-3 justify-between px-32  space-x-4 space-y-4 mt-10">
