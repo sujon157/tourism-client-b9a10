@@ -82,7 +82,7 @@ const Login = () => {
 
 
     return (
-        <div className="border">
+        <div className="border bg-slate-100">
            <p className="text-center mt-32 text-blue-950">
           <span className="text-4xl font-serif">  Welcome to our tourism website!</span> <br /> Please login to access your personalized experience. <br />
             If you don't have an account, click the 'Sign up' button to create one.

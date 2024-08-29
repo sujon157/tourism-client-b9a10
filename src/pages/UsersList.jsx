@@ -44,7 +44,7 @@ const UsersList = () => {
     return (
 
         <div>
-            <div className="mb-6 p-20 bg-amber-100 ">
+            <div className="mb-6 p-20 bg-slate-200 ">
                 <h2 className="font-serif text-4xl  text-center mt-14"> Please see User Lists</h2>
                 
                     <p className="text-center">

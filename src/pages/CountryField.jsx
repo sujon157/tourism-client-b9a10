@@ -37,7 +37,7 @@ const CountryField = () => {
       }
       return (
             <div>
-                  <div className="form-container pt-28 bg-amber-100 ">
+                  <div className="form-container pt-28 bg-slate-200 ">
                         <div className="belt ">
 
 

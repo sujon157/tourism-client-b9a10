@@ -44,7 +44,7 @@ const AddTouristsSpot = () => {
             })
     }
     return (
-        <div className=" p-36 bg-amber-100">
+        <div className=" p-36 bg-slate-200">
 
             <p className="text-center mt-2">
                 <span className="text-4xl text-blue-950">Tourist Spot Input Field</span>

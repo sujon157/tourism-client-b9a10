@@ -6,7 +6,7 @@ const CountryDetails = ({ country }) => {
       const { _id, tourists_spot_name, image, seasonality, location, short_description, country_Name, average_cost } = country;
       return (
             <div className="">
-
+              
                   <a href="#" className="card">
                         <div className="card__image">
                               <img src={image} alt='' />
