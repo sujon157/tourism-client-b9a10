@@ -1,7 +1,10 @@
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
+
 
 
 const AddTouristsSpot = () => {
+
 
     const handleAddSpots = event => {
         event.preventDefault();
@@ -43,123 +46,149 @@ const AddTouristsSpot = () => {
                 }
             })
     }
+
+
     return (
         <div className=" p-36 bg-slate-200">
 
-            <p className="text-center mt-2">
-                <span className="text-4xl text-blue-950">Tourist Spot Input Field</span>
-                <p className="text-gray-600 mt-2">Please fill out the form below to add a new tourist spot.</p>
-                <hr />
+
+
+
+            <div className="text-center mt-2">
+                <Fade delay={700} direction="left">
+                    <h1 className="text-4xl font-bold text-center">Add Tourists Spot...........</h1>
+
+                </Fade>
+                <Fade delay={1200} direction="right">
+                    <p className="text-gray-600 mt-2">........Please fill out the form below to add a new tourist spot.</p>
+
+                </Fade>                <hr />
                 <div className="line"></div>
-                <p>Note: All fields are required.</p>
+                <Fade delay={1600} direction="up">
+                    <p>Note: All fields are required.......</p>
+                </Fade>
                 <div className="line"></div>
-            </p>
-            <form onSubmit={handleAddSpots} className=" mt-8" >
-                {/* name ,email, country_Name*/}
-                <div className=" md:flex mb-6">
-                    <div className="form-control w-1/2">
-                        <label className="label">
-                            <span className="label-text">User Name</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="name" placeholder="User Name" className="input input-bordered w-full " required />
-                        </label>
-                    </div>
-                    <div className="form-control w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">User Email</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="email" name="email" placeholder="User Email" className="input input-bordered w-full" required />
-                        </label>
-                    </div>
-                    <div className="form-control w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text"> Country_Name</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="country_Name" placeholder=" Country_Name" className="input input-bordered w-full" required />
-                        </label>
-                    </div>
-
-                </div>
-                {/* tourists_spot_name,location,Total Visitors Per Year */}
-                <div className=" md:flex mb-6">
-                    <div className="form-control w-1/2">
-                        <label className="label">
-                            <span className="label-text"> Tourists_spot_name</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="tourists_spot_name" placeholder=" Tourists_spot_name" className="input input-bordered w-full " required />
-                        </label>
-                    </div>
-                    <div className="form-control w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Location</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="location" placeholder="Location" className="input input-bordered w-full" required />
-                        </label>
-                    </div>
-
-                    <div className="form-control w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Total Visitors Per Year </span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="totalVisitorsPerYear" placeholder="Total Visitors Per Year" className="input input-bordered w-full " required />
-                        </label>
-                    </div>
+            </div>
 
 
-                </div>
-                {/* seasonality,travel_time,average_cost */}
-                <div className=" md:flex mb-6">
-                    <div className="form-control w-1/2">
-                        <label className="label">
-                            <span className="label-text"> Seasonality</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="seasonality" placeholder="Seasonality" className="input input-bordered w-full " required />
-                        </label>
-                    </div>
-                    <div className="form-control w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Travel_time</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="travel_time" placeholder="Travel_time" className="input input-bordered w-full" required />
-                        </label>
-                    </div>
-                    <div className="form-control w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Average_cost</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="average_cost" placeholder="Average_cost" className="input input-bordered w-full" required />
-                        </label>
-                    </div>
 
-                </div>
-                {/* image */}
-                <div className=" md:flex mb-6">
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text">Image</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="image" placeholder="Image" className="input input-bordered w-full " required />
-                        </label>
+
+            <Fade delay={2200} direction="left">
+                <form onSubmit={handleAddSpots} className=" mt-8 px-32" >
+                    {/* name ,email, country_Name*/}
+                    <div className=" md:flex mb-6">
+                
+                            <div className="form-control w-1/2">
+                                <label className="label">
+                                    <span className="label-text">User Name</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="text" name="name" placeholder="User Name" className="input input-bordered w-full " required />
+                                </label>
+                            </div>
+                      
+                       
+                            <div className="form-control w-1/2 ml-4">
+                                <label className="label">
+                                    <span className="label-text">User Email</span>
+                                </label>
+                                <label className="input-group">
+                                    <input type="email" name="email" placeholder="User Email" className="input input-bordered w-full" required />
+                                </label>
+                            </div>
+                       
+                        
+                         
+                     
+
+                        <div className="form-control w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text"> Country_Name</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="country_Name" placeholder=" Country_Name" className="input input-bordered w-full" required />
+                            </label>
+                        </div>
+
                     </div>
+                    {/* tourists_spot_name,location,Total Visitors Per Year */}
+                    <div className=" md:flex mb-6">
+                        <div className="form-control w-1/2">
+                            <label className="label">
+                                <span className="label-text"> Tourists_spot_name</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="tourists_spot_name" placeholder=" Tourists_spot_name" className="input input-bordered w-full " required />
+                            </label>
+                        </div>
+                        <div className="form-control w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Location</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="location" placeholder="Location" className="input input-bordered w-full" required />
+                            </label>
+                        </div>
 
-                </div>
-                {/* short_description */}
-                <div className="mb-6">
-                    <textarea name="short_description" className="p-3 rounded-lg" placeholder="Short_description" id="" cols="50" rows="6"></textarea>
-                </div>
-                <input type="submit" value="Add Tourists Spot" className="w-full btn btn-info text-2xl font-bold text-white" />
+                        <div className="form-control w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Total Visitors Per Year </span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="totalVisitorsPerYear" placeholder="Total Visitors Per Year" className="input input-bordered w-full " required />
+                            </label>
+                        </div>
 
-            </form>
+
+                    </div>
+                    {/* seasonality,travel_time,average_cost */}
+                    <div className=" md:flex mb-6">
+                        <div className="form-control w-1/2">
+                            <label className="label">
+                                <span className="label-text"> Seasonality</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="seasonality" placeholder="Seasonality" className="input input-bordered w-full " required />
+                            </label>
+                        </div>
+                        <div className="form-control w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Travel_time</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="travel_time" placeholder="Travel_time" className="input input-bordered w-full" required />
+                            </label>
+                        </div>
+                        <div className="form-control w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Average_cost</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="average_cost" placeholder="Average_cost" className="input input-bordered w-full" required />
+                            </label>
+                        </div>
+
+                    </div>
+                    {/* image */}
+                    <div className=" md:flex mb-6">
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Image</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="image" placeholder="Image" className="input input-bordered w-full " required />
+                            </label>
+                        </div>
+
+                    </div>
+                    {/* short_description */}
+                    <div className="mb-6">
+                        <textarea name="short_description" className="p-3 rounded-lg" placeholder="Short_description" id="" cols="109" rows="8"></textarea>
+                    </div>
+                    <input type="submit" value="Add Tourists Spot" className="w-full btn btn-info text-2xl font-bold text-white" />
+
+                </form>
+            </Fade>
         </div>
     );
 };

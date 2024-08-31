@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -45,40 +46,53 @@ const UsersList = () => {
 
         <div>
             <div className="mb-6 p-20 bg-slate-200 ">
-                <h2 className="font-serif text-4xl  text-center mt-14"> Please see User Lists</h2>
-                
+                <Fade direction="up">
+                    <h2 className="font-serif text-4xl  text-center mt-14"> Please see User Lists</h2>
+                </Fade>
+
+                <Fade direction="down">
                     <p className="text-center">
-                        You can edit and delete your users list here and click on them below to select 
+                        You can edit and delete your users list here and click on them below to select
                     </p>
-                
+                </Fade>
+
                 <div className="overflow-x-auto mt-10">
                     <table className="table ">
                         {/* head */}
+
                         < thead className="bg-slate-800 text-white font-bold">
                             <tr>
+
                                 <th>ID</th>
                                 <th>TOURISTS_SPOTS_NAME</th>
                                 <th>COUNTRY</th>
                                 <th>LOCATION</th>
                                 <th>ACTION</th>
+
                             </tr>
                         </thead>
+
                         <tbody>
                             {/* row 1 */}
                             {
                                 userList.map(list => <tr key={list._id} className="text-red-500">
-                                    <th>{list._id}</th>
+                                    <Fade direction="left">
+                                        <th>{list._id}</th>
+                                    </Fade>
                                     <td>{list.tourists_spot_name}</td>
                                     <td>{list.country_Name}</td>
                                     <td>{list.location}</td>
-                                    <td>
-                                        <div className="flex gap-4">
-                                            <Link to={`/updateSpot/${list._id}`}>
-                                                <button>Edit</button>
-                                            </Link>
-                                            <button onClick={() => handleDelete(list._id)}>X</button>
-                                        </div>
-                                    </td>
+                                    <Fade direction="right">
+                                        <td>
+                                            <div className="flex gap-4">
+                                                <Link to={`/updateSpot/${list._id}`}>
+                                                    <button>Edit</button>
+                                                </Link>
+                                                <button onClick={() => handleDelete(list._id)}>X</button>
+                                            </div>
+                                        </td>
+                                    </Fade>
+
                                 </tr>)
                             }
 
@@ -87,7 +101,7 @@ const UsersList = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 };
 

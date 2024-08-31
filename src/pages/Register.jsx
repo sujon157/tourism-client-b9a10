@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Fade } from "react-awesome-reveal";
 
 const Register = () => {
     const { createUser, user, setUser, showPassword, setShowPassWord } = useContext(AuthContext);
     const [passError, setPassError] = useState('');
+
     console.log(user);
 
 
@@ -42,7 +44,8 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                setUser(result.user)
+                setUser(result.user);
+               
                 if (result.user) {
                     Swal.fire({
                         icon: 'success',
@@ -60,21 +63,30 @@ const Register = () => {
                             animate__fadeOutDown
                             animate__faster
                           `
+                      
                         }
+                   
                     });
+               
                 }
+              
+                
             })
             .then(error => {
                 console.error(error);
             })
     }
     return (
-        <div>
-            <div>
-                <div className="hero bg-indigo-500 min-h-screen">
+        <div className=" px-40 py-16">
+
+
+            <Fade direction="left">
+                <div className="hero min-h-screen ">
                     <div className=" hero-content flex-col lg:flex-row-reverse mt-24  w-full">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl text-white font-bold">Sign Up now!</h1>
+                            <Fade delay={700} direction="right">
+                                <h1 className="text-5xl text-blue-950 font-bold">Sign Up now!</h1>
+                            </Fade>
 
                         </div>
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -112,19 +124,31 @@ const Register = () => {
                                     </label>
                                     <input type="photo" name='photo' placeholder="photoURL" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Sign Up</button>
-                                </div>
-                                <div className="flex my-2">
-                                    <p className="text-xs">Already have an account?</p>
+                                <Fade direction="up">
+                                    <div className="form-control mt-6">
 
-                                    <Link className="text-white text-xs mr-8" to='/login'>Login</Link>
-                                </div>
+                                        <button className="btn btn-primary">Sign Up</button>
+
+                                    </div>
+                                </Fade>
+                                <Fade delay={500} direction="up">
+                                    <div className="flex my-2">
+
+                                        <p className="text-xs">Already have an account?</p>
+
+                                        <Link className="text-white text-xs mr-8" to='/login'>Login</Link>
+
+                                    </div>
+                                </Fade>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Fade>
+
+
+
+
         </div>
     );
 };

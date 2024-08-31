@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import './Navbar.css';
+
 import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
@@ -110,7 +110,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    {/* <img src="https://i.ibb.co/w0d1F8J/airplane.png" className="w-14 h-14" alt="" /> */}
+                 
                     <a className="my-anchor-elements">
                         <img src="https://i.ibb.co/w0d1F8J/airplane.png" className="w-14 h-14" alt="" />
                     </a>
@@ -171,17 +171,6 @@ const Navbar = () => {
                         </label>
                     </a>
                     <Tooltip id="my-tooltip" />
-
-
-
-
-
-
-
-
-
-
-
                     {
                         user ?
                             <>
@@ -191,7 +180,7 @@ const Navbar = () => {
                                         <a className="my-anchor-element"><img src={user.photoURL} className="rounded-full w-10 h-10 mr-3" alt="" /></a>
 
                                         <Tooltip anchorSelect=".my-anchor-element" place="top">
-                                            Account
+                                            {user.displayName}
                                         </Tooltip>
 
 
