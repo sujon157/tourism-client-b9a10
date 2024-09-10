@@ -56,10 +56,10 @@ const TouristSection = () => {
                                     tourist.map(p =>
 
 
-                                          <div className=" shadow-black shadow-xl pl-5  pb-12 border-l-4 rounded-xl"
+                                          <div className="  shadow-black shadow-xl pl-5  pb-12 border-l-4 rounded-xl"
                                                 key={p._id}>
 
-                                                <div className="flip-card ">
+                                                <div className="flip-card   ">
                                                       <div className="flip-card-inner   ">
                                                             <div className="flip-card-front">
                                                                   <img src={p.image} alt="" />

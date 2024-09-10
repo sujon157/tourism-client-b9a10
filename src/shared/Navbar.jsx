@@ -7,8 +7,7 @@ import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
     const { user, logOut, loading } = useContext(AuthContext);
-    // const [theme, setTheme] = useState('light');
-    // console.log(theme);
+  
 
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
@@ -28,34 +27,7 @@ const Navbar = () => {
         }
     };
 
-    // useEffect(() => {
-
-    //     const localTheme = localStorage.getItem('theme') || 'light';
-    //     localStorage.setItem('theme', localTheme);
-
-
-    //     document.querySelector('html').setAttribute('data-theme', localTheme);
-    //     setTheme(localTheme);
-
-    // }, []);
-
-    // const handleToggle = (e) => {
-    //     if (e.target.checked) {
-    //         setTheme('dark');
-    // localStorage.setItem('theme', 'dark');
-
-    // document.querySelector('html').setAttribute('data-theme', 'dark');
-    // setTheme('dark');
-    //     }
-    //     else {
-
-    //         setTheme('light');
-    // localStorage.setItem('theme', 'light');
-
-    // document.querySelector('html').setAttribute('data-theme', 'light');
-    // setTheme('light');
-    //     }
-    // }
+   
 
 
     const handleSignOut = () => {
@@ -70,24 +42,24 @@ const Navbar = () => {
 
 
     const navLink = <>
-        <li><NavLink to='/' className='text-white font-semibold'>HOME</NavLink></li>
+        <li><NavLink to='/' className=' font-semibold'>HOME</NavLink></li>
         {
             user &&
-            <li><NavLink to='/addSpot' className='text-white font-semibold'  >ADD TOURIST</NavLink></li>
+            <li><NavLink to='/addSpot' className=' font-semibold'  >ADD TOURIST</NavLink></li>
         }
-        <li><NavLink to='/countryField' className='text-white font-semibold'  >ADD COUNTRY</NavLink></li>
-        <li><NavLink to='/spots' className='text-white font-semibold'>ALL TOURISTS</NavLink></li>
+        <li><NavLink to='/countryField' className=' font-semibold'  >ADD COUNTRY</NavLink></li>
+        <li><NavLink to='/spots' className=' font-semibold'>ALL TOURISTS</NavLink></li>
         {
             user &&
 
-            <li><NavLink to='/users' className='text-white font-semibold'>USER LIST</NavLink></li>
+            <li><NavLink to='/users' className=' font-semibold'>USER LIST</NavLink></li>
 
         }
 
     </>
     return (
         <div className="">
-            <div className="navbar   navbar-dark bg-primary shadow-3xl fixed z-10">
+            <div className="  navbar navbar-dark   bg-base-200 shadow-3xl fixed z-10 ">
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -106,20 +78,20 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content  mt-3 w-52 p-2">
+                            className="menu menu-sm dropdown-content  mt-3 w-52  p-2">
                             {navLink}
                         </ul>
                     </div>
                  
                     <a className="my-anchor-elements">
-                        <img src="https://i.ibb.co/w0d1F8J/airplane.png" className="w-14 h-14" alt="" />
+                        <img src="https://i.ibb.co/w0d1F8J/airplane.png" className="w-12 h-8 md:w-14 md:h-14" alt="" />
                     </a>
                     <Tooltip anchorSelect=".my-anchor-elements" place="top">
                         Logo
                     </Tooltip>
-                    <a className="btn btn-ghost text-white font-bold text-xl">
+                    <a className="btn btn-ghost  font-bold text-[15px] md:text-xl">
 
-                        <span className='text-3xl font-bold text-orange-600'>T</span>RAVEL TOUR</a>
+                      <span className="text-red-700">T</span> RAVEL TOUR</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -127,8 +99,6 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2 p-6 ">
-
-
                     <a data-tooltip-id="my-tooltip"
                         data-tooltip-content="Theme"
                         data-tooltip-place="top">
@@ -175,9 +145,9 @@ const Navbar = () => {
                         user ?
                             <>
                                 <div className="dropdown dropdown-bottom">
-                                    <div tabIndex={0} role="button" className=" m-1 rounded-full w-10 h-10 mr-7 ">
+                                    <div tabIndex={0} role="button" className="mr-16   m-1 rounded-full w-10 h-10 md:mr-7 ">
 
-                                        <a className="my-anchor-element"><img src={user.photoURL} className="rounded-full w-10 h-10 mr-3" alt="" /></a>
+                                        <a className="my-anchor-element"><img src={user.photoURL} className="rounded-full mt-3 md:mt-0 w-8 h-8 md:w-10 md:h-10 mr-3" alt="" /></a>
 
                                         <Tooltip anchorSelect=".my-anchor-element" place="top">
                                             {user.displayName}
@@ -193,26 +163,26 @@ const Navbar = () => {
                             :
                             <>
                                 <Link to='/login'>
-                                    <p>
-                                        <a href="#_" className="relative inline-flex items-center justify-center inline-block p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 rounded-lg shadow-2xl group">
-                                            <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-red-500 rounded-full blur-md ease"></span>
-                                            <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                                    <p className="" >
+                                        <a href="#_" className="relative inline-flex items-center justify-center inline-block px-4 p-4 md:px-5 py-2 md:py-3 overflow-hidden font-medium text-indigo-600 rounded-lg shadow-2xl group">
+                                            <span className="absolute top-0 left-0 w-20 h-16 md:w-40 md:h-40 -mt-10 -ml-3 transition-all duration-700 bg-red-500 rounded-full blur-md ease"></span>
+                                            <span className="absolute  inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
                                                 <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-purple-500 rounded-full blur-md"></span>
                                                 <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-pink-500 rounded-full blur-md"></span>
                                             </span>
-                                            <span className="relative text-white">Log in </span>
+                                            <span className="relative text-white text-[10px] md:text-[14px]">Log in </span>
                                         </a>
                                     </p>
                                 </Link>
 
                                 <Link to='/register'>
-                                    <p>
-                                        <a href="#_" className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
+                                    <p className="mr-36 md:mr-0">
+                                        <a href="#_" className="relative inline-flex items-center justify-start px-5 py-2 md:px-6 md:py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
                                             <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
                                                 <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
                                             </span>
                                             <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-                                            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Sign Up</span>
+                                            <span className="relative w-full text-left text-white  transition-colors duration-200 ease-in-out group-hover:text-white text-[10px] md:text-[14px]">Sign Up</span>
                                         </a>
 
                                     </p>

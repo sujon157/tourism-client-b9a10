@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
+
 import CountryCard from "./CountryCard";
 import { Fade } from "react-awesome-reveal";
 

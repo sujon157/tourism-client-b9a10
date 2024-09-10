@@ -5,7 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const TourBooking = () => {
       return (
-            <div className=" bg-base-200 grid justify-between gap-16 md:grid-cols-2 p-8">
+            <div className=" bg-base-200 grid justify-between gap-16 grid-cols-1 md:grid-cols-2  p-8">
                   <div>
                         <div className="bg-blue-600 flex gap-1 text-white rounded-t-2xl p-4">
                               <Fade delay={700} direction="right">
@@ -61,7 +61,10 @@ const TourBooking = () => {
 
                               </div>
                               <Fade delay={400} direction="right">
-                                    <h2 className="text-sm font-bold text-blue-700 mt-10">TRAVELLER INFO</h2>
+                                    <div className="">
+                                          <h2 className="text-sm font-bold text-blue-700 mt-10">TRAVELLER INFO</h2>
+
+                                    </div>
                               </Fade>
                               <hr className="mt-3 " />
 
@@ -87,42 +90,43 @@ const TourBooking = () => {
                               </Fade>
                               <Fade delay={1000} direction="left">
                                     <p className="text-xs">30 August,2024 - 31 August,2024</p>
-                              </Fade>                              <div className="flex justify-between">
+                              </Fade>                             
+                               <div className="flex justify-between font-bold">
                                     <Fade delay={700} direction="left" >
-                                          <h2 className="text-sm font-bold  mt-10">ROOM PRICE </h2>
+                                          <h2 className="text-sm   mt-10">ROOM PRICE </h2>
                                     </Fade >
                                     <Fade delay={700} direction="right">
                                           <p className="mt-10">$90.00</p>
                                     </Fade>
                               </div>
                               <hr className="mt-3 " />
-                              <div className="flex  justify-between ml-[300px]">
+                              <div className="flex  justify-between font-bold ml-8 md:ml-[300px]">
                                     <Fade delay={900} direction="right">
-                                          <h2 className="text-sm font-bold  mt-10">TOTAL PRICE </h2>
+                                          <h2 className="text-sm  mt-10">TOTAL PRICE </h2>
                                     </Fade>
                                     < Fade delay={900} direction="left">
-                                          <p className="mt-10 ml-24">$90.00</p>
+                                          <p className="mt-10 ml-8 md:ml-24">$90.00</p>
 
                                     </Fade>
                               </div>
-                              <div className="flex  justify-between  ml-[340px]">
+                              <div className="flex  justify-between font-bold ml-10 md:ml-[340px]">
                                     <Fade delay={1000} direction="left">
-                                          <h2 className="text-sm font-bold  mt-10">TAX 9% </h2>
+                                          <h2 className="text-sm  text-black mt-10">TAX 9% </h2>
 
                                     </Fade>
                                     <Fade delay={1000} direction="right">
-                                          <p className="mt-10 ml-24">$58.00</p>
+                                          <p className="mt-10 ml-9 md:ml-24 text-black">$58.00</p>
 
                                     </Fade>
                               </div>
                               <hr className="mt-3 " />
-                              <div className="flex  justify-between  ml-[280px]">
+                              <div className="flex  justify-between font-bold text-black ml-7  md:ml-[280px]">
                                     <Fade delay={1200} direction="right">
-                                          <h2 className="text-sm font-bold  mt-10">GRAND TOTAL </h2>
+                                          <h2 className="text-sm  text-black mt-10">GRAND TOTAL </h2>
 
                                     </Fade>
                                     <Fade delay={1200} direction="left">
-                                          <p className="mt-10 ml-24">$148.00</p>
+                                          <p className="mt-10 text-black ml-8 md:ml-24">$148.00</p>
                                     </Fade>
 
                               </div>
@@ -131,27 +135,27 @@ const TourBooking = () => {
                         </div>
 
                   </div>
-                  <div className="space-y-16 mt-24">
+                  <div className=" text-center  space-y-2 md:space-y-16 mt-2 md:mt-24">
                         <Fade direction="right">
-                              <h2 className="text-3xl font-bold text-blue-500">
+                              <h2 className=" text-2xl md:text-4xl font-bold text-blue-500">
                                     Built For The Best
                               </h2>
 
                         </Fade>
                         <Fade direction="left">
-                              <h3 className="text-4xl font-bold">
+                              <h3 className=" text-xl md:text-4xl font-bold">
                                     Tour Booking & Hotel Booking
                               </h3>
                         </Fade>
                         <Fade delay={700} direction="right">
                               <p>A tour travel is a way to inform your potential customers about the details of your <br /> tours. It is also a way to persuade them to book with you. Overall,it is your  <br /> to showcase your unique selling points,  highlight the benefits of your  <br /> tours, and   a memorable impression on your readers.</p>
                         </Fade>
-                        <div className="flex gap-8">
+                        <div className="flex gap-8 ml-8 md:ml-36">
                               <Fade delay={900} direction="left">
-                                    <button className="btn btn-secondary p-4">Tour Features</button>
+                                    <button className="btn btn-secondary p-4 ">Tour Features</button>
                               </Fade>
                               <Fade delay={900} direction="right">
-                                    <button className="btn btn-success p-4 text-white">Tour Features</button>
+                                    <button className="btn btn-success p-4 text-white  ">Tour Features</button>
                               </Fade>
                         </div>
                   </div>

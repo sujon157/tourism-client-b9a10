@@ -15,9 +15,9 @@ const CountryCard = ({ country }) => {
                                                 className="max-w-sm rounded-lg shadow-2xl" />
                                     </Fade>
                                     <Fade delay={800} direction="left">
-                                          <div className="w-1/2">
-                                                <h1 className="text-5xl font-bold">{country_name}</h1>
-                                                <p className="py-6">
+                                          <div className="w-1/2 ml-24 md:ml-0">
+                                                <h1 className=" textxl md:text-5xl font-bold">{country_name}</h1>
+                                                <p className=" py-2 md:py-6">
                                                       {
                                                             description
                                                       }

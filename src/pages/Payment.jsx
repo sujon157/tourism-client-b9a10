@@ -35,7 +35,7 @@ const Payment = () => {
                         <Fade delay={1400} direction='down'>
                               <h2 className="text-6xl font-bold text-gray-800">Payment <span className="text-blue-800 ">Methods</span></h2> <br />
                         </Fade>
-                        <div className="flex justify-between ">
+                        <div className="flex justify-between gap-1">
 
                               <Fade delay={900} direction='left'>
                                     <h3 className="text-gray-600 text-2xl font-bold">Checkout by normal booking<span className="text-blue-400">.12+ methods</span></h3>
@@ -43,7 +43,7 @@ const Payment = () => {
 
 
                               <Fade delay={900} direction='right'>
-                                    <img src="https://i.ibb.co/0qVhnYp/dollar-symbol-money-svgrepo-com.png" alt="dollar" className='w-28 h-28 ' />
+                                    <img src="https://i.ibb.co/0qVhnYp/dollar-symbol-money-svgrepo-com.png" alt="dollar" className='w-14 h-10 md:w-28 md:h-28 ' />
                               </Fade>
 
 
