@@ -53,7 +53,6 @@ const Navbar = () => {
             user &&
 
             <li><NavLink to='/users' className=' font-semibold'>USER LIST</NavLink></li>
-
         }
 
     </>
