@@ -9,7 +9,7 @@ const SelfCountrySpot = () => {
       const [countryCard, setCountryCard] = useState([]);
 
       useEffect(() => {
-            fetch('http://localhost:3000/spot')
+            fetch('https://tourism-server-b9a10.vercel.app/spot')
                   .then(res => res.json())
                   .then(data => {
                         console.log(data);

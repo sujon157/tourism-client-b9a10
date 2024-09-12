@@ -11,7 +11,7 @@ const ViewSpot = () => {
     console.log(view);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/singleSpot/${id}`)
+        fetch(`https://tourism-server-b9a10.vercel.app/singleSpot/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

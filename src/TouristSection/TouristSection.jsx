@@ -11,7 +11,7 @@ const TouristSection = () => {
       console.log(tourist);
 
       useEffect(() => {
-            fetch('http://localhost:3000/spot')
+            fetch('https://tourism-server-b9a10.vercel.app/spot')
                   .then(res => res.json())
                   .then(data => {
                         setTourist(data);

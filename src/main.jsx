@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path: '/spots',
         element: <TouristsSpot></TouristsSpot>,
-       loader: () => fetch('http://localhost:3000/spot')
+       loader: () => fetch('https://tourism-server-b9a10.vercel.app/spot')
       },
      
     
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
       {
         path: '/users',
         element: <PrivateRoute><UsersList></UsersList></PrivateRoute>,
-        loader: () => fetch('http://localhost:3000/spot')
+        loader: () => fetch('https://tourism-server-b9a10.vercel.app/spot')
       },
       {
         path: '/login',

@@ -9,7 +9,7 @@ const UpdateSpot = () => {
     console.log(id);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/singleTourist/${id}`)
+        fetch(`https://tourism-server-b9a10.vercel.app/singleTourist/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSpot(data);
@@ -37,7 +37,7 @@ const UpdateSpot = () => {
 
         console.log(UpdateSpotsInfo);
 
-        fetch(`http://localhost:3000/updateSpot/${id}`, {
+        fetch(`https://tourism-server-b9a10.vercel.app/updateSpot/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -15,7 +15,7 @@ const CountryField = () => {
             console.log(countryInfo);
 
 
-            fetch('http://localhost:3000/country', {
+            fetch('https://tourism-server-b9a10.vercel.app/country', {
                   method: 'POST',
                   headers: {
                         'Content-Type': 'application/json'

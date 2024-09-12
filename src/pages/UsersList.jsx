@@ -22,7 +22,7 @@ const UsersList = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:3000/spot/${id}`, {
+                fetch(`https://tourism-server-b9a10.vercel.app/spot/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
